@@ -1,0 +1,32 @@
+{
+    "name": "metarush/lang",
+    "type": "library",
+    "description": "Language file translations / i18n / l10n with replaceable variables.",
+    "keywords": [
+        "php",
+        "language file",
+        "translations",
+        "internationalization",
+        "localization",
+        "i18n",
+        "l10n"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "metarush/lang contributors",
+            "homepage": "https://github.com/metarush/lang/graphs/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MetaRush\\Lang\\": "src"
+        }
+    },
+    "require": {
+        "symfony/yaml": "^4.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8"
+    }
+}
