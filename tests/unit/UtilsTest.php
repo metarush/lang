@@ -21,12 +21,12 @@ class UtilsTest extends \PHPUnit\Framework\TestCase
     {
         $var = 'foo';
 
-        $varSyntaxed = $this->utils->varSyntaxed($var);
+        $varSyntaxed = $this->utils->varSyntax($var);
         $this->assertEquals('{{foo}}', $varSyntaxed);
 
         $this->cfg->setOpenSyntax('%');
         $this->cfg->setCloseSyntax('%');
-        $varSyntaxed = $this->utils->varSyntaxed($var);
+        $varSyntaxed = $this->utils->varSyntax($var);
         $this->assertEquals('%foo%', $varSyntaxed);
     }
 }

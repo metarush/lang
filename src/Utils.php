@@ -20,7 +20,7 @@ class Utils
      * @param string $string
      * @return string
      */
-    public function varSyntaxed(string $string): string
+    public function varSyntax(string $string): string
     {
         return $this->cfg->getOpenSyntax() . $string . $this->cfg->getCloseSyntax();
     }
