@@ -17,16 +17,33 @@ class UtilsTest extends \PHPUnit\Framework\TestCase
         $this->utils = new \MetaRush\Lang\Utils($this->cfg);
     }
 
-    public function testVarSyntaxed()
+    public function testVarSyntax()
     {
         $var = 'foo';
 
-        $varSyntaxed = $this->utils->varSyntax($var);
-        $this->assertEquals('{{foo}}', $varSyntaxed);
+        $varSyntax = $this->utils->varSyntax($var);
+        $this->assertEquals('{{foo}}', $varSyntax);
 
         $this->cfg->setOpenSyntax('%');
         $this->cfg->setCloseSyntax('%');
-        $varSyntaxed = $this->utils->varSyntax($var);
-        $this->assertEquals('%foo%', $varSyntaxed);
+        $varSyntax = $this->utils->varSyntax($var);
+        $this->assertEquals('%foo%', $varSyntax);
+    }
+
+    public function testVarSyntaxKeys()
+    {
+        $vars = [
+            'foo' => 'bar',
+            'baz' => 'qux',
+        ];
+
+        $varSyntaxKeys = $this->utils->varSyntaxKeys($vars);
+        $this->assertEquals($varSyntaxKeys['{{foo}}'], 'bar');
+        $this->assertEquals($varSyntaxKeys['{{baz}}'], 'qux');
+
+        $this->cfg->setOpenSyntax('%');
+        $this->cfg->setCloseSyntax('%');
+        $varSyntaxKeys = $this->utils->varSyntaxKeys($vars);
+        $this->assertEquals($varSyntaxKeys['%foo%'], 'bar');
     }
 }
