@@ -31,6 +31,12 @@ class Config
      */
     private $closeSyntax = '}}';
 
+    /**
+     *
+     * @var string
+     */
+    private $adapter = 'Yaml';
+
     public function getCloseSyntax(): string
     {
         return $this->closeSyntax;
@@ -72,6 +78,17 @@ class Config
     public function setLocale(string $locale)
     {
         $this->locale = $locale;
+        return $this;
+    }
+
+    public function getAdapter(): string
+    {
+        return $this->adapter;
+    }
+
+    public function setAdapter(string $adapter)
+    {
+        $this->adapter = $adapter;
         return $this;
     }
 }
