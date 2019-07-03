@@ -1,7 +1,7 @@
 {
     "name": "metarush/lang",
     "type": "library",
-    "description": "Language file translations / i18n / l10n with replaceable variables.",
+    "description": "Language translations / i18n / l10n with replaceable variables.",
     "keywords": [
         "php",
         "language file",
@@ -24,6 +24,7 @@
         }
     },
     "require": {
+        "php": ">=7.1",
         "symfony/yaml": "^4.3"
     },
     "require-dev": {
