@@ -6,4 +6,5 @@ public/
 resources/docker/
 resources/notes/
 nbproject/
+tests/coverage/
 .env
