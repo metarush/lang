@@ -17,9 +17,9 @@ class Lang implements Adapters\AdapterInterface
     /**
      * @inheritDoc
      */
-    public function one(string $key, ?array $replacePairs = null): string
+    public function get(string $key, ?array $replacePairs = null): string
     {
-        return $this->adapter->one($key, $replacePairs);
+        return $this->adapter->get($key, $replacePairs);
     }
 
     /**

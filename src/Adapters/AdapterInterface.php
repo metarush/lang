@@ -12,7 +12,7 @@ interface AdapterInterface
      * @param array $replacePairs key value pair of language vars and values
      * @return int
      */
-    public function one(string $key, ?array $replacePairs): string;
+    public function get(string $key, ?array $replacePairs): string;
 
     /**
      * Get all langauge strings

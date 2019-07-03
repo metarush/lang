@@ -20,14 +20,14 @@ class YamlAdapterTest extends \PHPUnit\Framework\TestCase
         $this->lang = new \MetaRush\Lang\Lang($adapter);
     }
 
-    public function testOne()
+    public function testGet()
     {
-        $lang = $this->lang->one('foo');
+        $lang = $this->lang->get('foo');
 
         $this->assertEquals('hello world', $lang);
     }
 
-    public function testOneReplacePairs()
+    public function testGetReplacePairs()
     {
         $pairs = [
             'size'   => 'small',
@@ -37,7 +37,7 @@ class YamlAdapterTest extends \PHPUnit\Framework\TestCase
 
         $expected = 'the small white cat jumped';
 
-        $lang = $this->lang->one('bar', $pairs);
+        $lang = $this->lang->get('bar', $pairs);
 
         $this->assertEquals($expected, $lang);
     }

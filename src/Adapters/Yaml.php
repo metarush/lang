@@ -19,7 +19,7 @@ class Yaml implements AdapterInterface
     /**
      * @inheritDoc
      */
-    public function one(string $key, ?array $replacePairs = null): string
+    public function get(string $key, ?array $replacePairs = null): string
     {
         $langs = $this->all();
 
