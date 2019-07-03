@@ -41,4 +41,13 @@ class YamlAdapterTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals($expected, $lang);
     }
+
+    public function testAll()
+    {
+        $langs = $this->lang->all();
+
+        $this->assertCount(2, $langs);
+
+        $this->assertEquals($langs['foo'], 'hello world');
+    }
 }
